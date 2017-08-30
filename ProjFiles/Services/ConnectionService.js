@@ -13,13 +13,19 @@ module.exports =
       password: "Nb17s!fz486!",
       database: "sivaprasaddb"
     });
-    GetConnection1 : function (){
-      var con = mysql.createConnection({
-        host: "fdb16.awardspace.net",
-        user: "2405119_store",
-        password: "Sivaprasad",
-        database: "2405119_store"
-      });
+    con.connect(function(err) {
+      if (err) throw err;
+      console.log("Connected!");
+    });
+    return con;
+  }
+  GetConnection1 : function (){
+    var con = mysql.createConnection({
+      host: "fdb16.awardspace.net",
+      user: "2405119_store",
+      password: "Sivaprasad",
+      database: "2405119_store"
+    });
     con.connect(function(err) {
       if (err) throw err;
       console.log("Connected!");
